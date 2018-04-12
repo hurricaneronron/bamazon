@@ -72,24 +72,28 @@ function showInventory ( ) {
 
 function purchase ( ) {
   prompt(buy).then(function (r) {
-    console.log(r)
+    var amt = r.quantity
+    var itemNum = r.whichId
+      open ( )
+      config.query('SELECT stock_quantity FROM products WHERE item_id="'+itemNum+'"', function (e, res) {
+        if (e) throw e
+        if (amt > res[0].stock_quantity) {
+          console.log('Insufficient quantity!')
+          close ( )
+        }
+        if (amt <= res[0].stock_quantity) {
+          console.log('Purchase completed!')
+          config.query('SELECT price FROM products WHERE item_id="'+itemNum+'"', function (e, res) {
+            console.log("Your Total Cost: " + res[0].price * amt)
+          })
+          //show customer cost
+          config.query('UPDATE products SET stock_quantity=stock_quantity-'+amt+' WHERE item_id="'+itemNum+'"', function (e, res) {
+            if (e) throw e
+          })
+          close ( )
+        }
+      })
   })
 }
-
-// function delData(nm, bd) {
-//   open( )
-//   var qry = `
-//   DELETE FROM products
-//   SET ?
-//   `
-//   var values = {
-//     name: nm,
-//     currentBid: bd
-//   }
-//   config.query(qry, values, function (e, r) {
-//     if (e) throw e
-//   })
-//   close( )
-// }
 
 start ( )
