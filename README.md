@@ -13,7 +13,7 @@ A storefront that allows customers to view inventory and purchase items, depleti
 * [MySQL](https://www.mysql.com/)
 
 ## Demonstration
-*[Video Demo](https://drive.google.com/file/d/1g3r_ETxKFEg1Cbipq6fHr5ZdagC-y7wt/view?usp=sharing)
+* [Video Demo](https://drive.google.com/file/d/1g3r_ETxKFEg1Cbipq6fHr5ZdagC-y7wt/view?usp=sharing)
 
 ## Contributing
 
